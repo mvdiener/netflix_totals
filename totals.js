@@ -29,12 +29,17 @@ $(function(){
   };
 
   // when all ajax calls are complete, run the following function
-  $.when.apply($, seasonArrayJSON).then(processAllSeasons(seasonArrayJSON)));
+  $.when.apply($, seasonArrayJSON).then(processAllSeasons(seasonArrayJSON));
 
   // function to process all seasons
+  var percentWatchedArray = []
   var processAllSeasons = function(seasonArrayJSON){
-    var percentWatchedArray = []
-
+    $.each(seasonArrayJSON, function (index, value){
+      var episodeList = $($.parseHTML(value.html)).find(".episodeList")[0];
+      var episodeCount = episodeList.children.length;
+      var episodeArray = $(episodeList).find(".mini-progress-bar");
+      percentWatchedArray.push(seasonPercentWatched(episodeArray, episodeCount))
+    });
   };
 
   // get percent watched of a single season
