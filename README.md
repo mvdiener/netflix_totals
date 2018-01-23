@@ -1,6 +1,6 @@
 # Reeces Pieces Rules
 
-A small program to calculate the % change of an empty bag, when eating Reeces Pieces according to my very specific rules. The rules are as follows:
+A small program to calculate the % chance of an empty bag, when eating Reeces Pieces according to my very specific rules. The rules are as follows:
 
 Pick 3 pieces from the bag.
 You must eat all three if the colors are the same, or all three colors are different.
